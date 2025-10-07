@@ -53,7 +53,7 @@ const textVariants = {
   },
 };
 
-const MasterclassSection = () => {
+const Aboutsection = () => {
   return (
     <section 
       id="sobre" 
@@ -159,4 +159,4 @@ const MasterclassSection = () => {
   );
 };
 
-export default MasterclassSection;
+export default Aboutsection;
