@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, Video } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import bannerImage from './banner.jpg';
 import mobileImage from './mobile.jpg';
 import student1 from './pessoa1.png';
@@ -55,9 +55,9 @@ const HeroSection = () => {
   // Mobile Version
   if (isMobile) {
     return (
-      <section className="relative h-screen bg-black text-white overflow-hidden flex flex-col">
+      <section className="relative min-h-screen w-full bg-black text-white overflow-x-hidden flex flex-col">
         {/* Background Image Container */}
-        <div className="relative h-[45%] overflow-hidden">
+        <div className="relative h-[45vh] w-full overflow-hidden">
           <img 
             src={mobileImage}
             alt="Banner" 
@@ -69,7 +69,7 @@ const HeroSection = () => {
         </div>
         
         {/* Content Container */}
-        <div className="relative z-10 flex-1 px-5 py-6 flex flex-col justify-start bg-black">
+        <div className="relative z-10 flex-1 w-full px-4 py-6 flex flex-col justify-start bg-black">
           <div className="w-full max-w-md mx-auto space-y-4">
             {/* Logo */}
             <motion.div 
@@ -89,8 +89,8 @@ const HeroSection = () => {
               className="flex justify-center"
             >
               <div className="border-2 border-yellow-500 rounded-full px-4 py-2 flex items-center gap-2">
-                <Calendar className="w-3.5 h-3.5 text-yellow-500" />
-                <p className="text-white text-xs font-bold tracking-wide">
+                <Calendar className="w-3.5 h-3.5 text-yellow-500 flex-shrink-0" />
+                <p className="text-white text-xs font-bold tracking-wide whitespace-nowrap">
                   17/10 | 19H30 | ZOOM
                 </p>
               </div>
@@ -99,7 +99,7 @@ const HeroSection = () => {
             {/* Título Principal */}
             <motion.h1 
               {...fadeInUp}
-              className="text-2xl font-bold text-white leading-tight text-center pt-2"
+              className="text-2xl font-bold text-white leading-tight text-center pt-2 px-2"
             >
               Masterclass{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
@@ -115,27 +115,22 @@ const HeroSection = () => {
               Descobre como criar um negócio lucrativo com alojamento local mesmo sem teres imóveis próprios. Estratégias práticas e comprovadas.
             </motion.p>
 
-            {/* Botão CTA com Brilho Premium */}
-            <motion.div {...buttonGlow} className="pt-2">
+            {/* Botão CTA */}
+            <motion.div {...buttonGlow} className="pt-2 w-full">
               <motion.button
                 className="relative group w-full"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                {/* Glow de fundo */}
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full blur-lg opacity-50 group-hover:opacity-70 transition-opacity" />
                 
-                {/* Botão principal */}
                 <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold text-xs px-5 py-3.5 rounded-full shadow-2xl overflow-hidden">
-                  
-                  {/* Efeito shimmer */}
                   <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
                   
-                  {/* Conteúdo do botão */}
                   <span className="relative z-10 flex items-center justify-center gap-1">
                     GARANTIR A MINHA VAGA AGORA
                     <svg 
-                      className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" 
+                      className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform flex-shrink-0" 
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
@@ -153,7 +148,6 @@ const HeroSection = () => {
               {...studentBadge}
               className="flex items-center gap-2.5 justify-center pt-1"
             >
-              {/* Fotos dos alunos empilhadas */}
               <div className="flex -space-x-2">
                 <img 
                   src={student1} 
@@ -172,7 +166,6 @@ const HeroSection = () => {
                 />
               </div>
 
-              {/* Texto */}
               <p className="text-white text-xs font-medium">
                 Junta-te a <span className="font-bold">centenas de participantes</span>
               </p>
@@ -186,7 +179,7 @@ const HeroSection = () => {
   // Desktop Version
   return (
     <section 
-      className="relative h-screen flex items-center overflow-hidden bg-black"
+      className="relative min-h-screen w-full flex items-center overflow-hidden bg-black"
       style={{
         backgroundImage: `url(${bannerImage})`,
         backgroundSize: 'cover',
@@ -194,7 +187,7 @@ const HeroSection = () => {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 w-full">
         <div className="max-w-xl">
           
           {/* Logo */}
@@ -248,16 +241,11 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
             >
-              {/* Glow de fundo */}
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full blur-xl opacity-60 group-hover:opacity-80 transition-opacity" />
               
-              {/* Botão principal */}
               <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold text-sm lg:text-base px-7 lg:px-9 py-3.5 lg:py-4 rounded-full shadow-2xl overflow-hidden">
-                
-                {/* Efeito shimmer */}
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
                 
-                {/* Conteúdo do botão */}
                 <span className="relative z-10 flex items-center justify-center gap-2">
                   GARANTIR A MINHA VAGA AGORA
                   <svg 
@@ -279,7 +267,6 @@ const HeroSection = () => {
             {...studentBadge}
             className="flex items-center gap-3"
           >
-            {/* Fotos dos alunos empilhadas */}
             <div className="flex -space-x-2">
               <img 
                 src={student1} 
@@ -298,7 +285,6 @@ const HeroSection = () => {
               />
             </div>
 
-            {/* Texto */}
             <p className="text-white text-sm lg:text-base font-medium">
               Junta-te a <span className="font-bold">centenas de participantes</span>
             </p>

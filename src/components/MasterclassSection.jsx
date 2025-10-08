@@ -6,50 +6,50 @@ const MasterclassSection = () => {
 
   const learningTopics = [
     {
-      icon: <Home className="w-7 h-7" />,
+      icon: <Home className="w-6 h-6 md:w-7 md:h-7" />,
       title: "Gestão Remota",
       description: "Aprende a gerir propriedades à distância com sistemas automatizados"
     },
     {
-      icon: <TrendingUp className="w-7 h-7" />,
+      icon: <TrendingUp className="w-6 h-6 md:w-7 md:h-7" />,
       title: "Escalar Rápido",
       description: "Estratégias para multiplicar o teu portefólio em tempo recorde"
     },
     {
-      icon: <Users className="w-7 h-7" />,
+      icon: <Users className="w-6 h-6 md:w-7 md:h-7" />,
       title: "Parcerias Win-Win",
       description: "Como criar acordos lucrativos com proprietários de imóveis"
     },
     {
-      icon: <Zap className="w-7 h-7" />,
+      icon: <Zap className="w-6 h-6 md:w-7 md:h-7" />,
       title: "Automação Total",
       description: "Sistemas que trabalham 24/7 enquanto dormes"
     }
   ];
 
   return (
-    <section className="relative bg-black min-h-screen py-8 md:py-16 overflow-hidden">
+    <section className="relative bg-black min-h-screen w-full py-12 md:py-16 overflow-x-hidden">
       {/* Background effect */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-500/5 rounded-full blur-3xl" />
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-yellow-500/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10 max-w-6xl w-full">
         {/* Title */}
-        <div className="text-center mb-6 md:mb-12 px-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 md:mb-4 leading-tight px-4">
             Transforma Conhecimento em{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
               Rendimento Passivo
             </span>
           </h2>
-          <p className="text-gray-400 text-base md:text-lg mt-4 max-w-3xl mx-auto">
+          <p className="text-gray-400 text-sm md:text-base lg:text-lg mt-3 md:mt-4 max-w-3xl mx-auto px-4">
             Domina as estratégias que os top hosts usam para escalar no Airbnb e Booking
           </p>
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-6 md:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6 mb-8 md:mb-12">
           {learningTopics.map((topic, index) => (
             <div
               key={index}
@@ -57,7 +57,6 @@ const MasterclassSection = () => {
               onMouseLeave={() => setHoveredCard(null)}
               className="relative group h-full"
             >
-              {/* Animated Border SVG - ALWAYS ANIMATING */}
               <div className="relative h-full">
                 <svg
                   className="absolute inset-0 w-full h-full pointer-events-none"
@@ -71,7 +70,6 @@ const MasterclassSection = () => {
                     </linearGradient>
                   </defs>
                   
-                  {/* Base rotating border - ALWAYS visible and rotating */}
                   <rect
                     x="2"
                     y="2"
@@ -95,7 +93,6 @@ const MasterclassSection = () => {
                     />
                   </rect>
 
-                  {/* Secondary faster rotation on hover */}
                   {hoveredCard === index && (
                     <rect
                       x="2"
@@ -123,12 +120,12 @@ const MasterclassSection = () => {
                 </svg>
 
                 {/* Card */}
-                <div className="relative bg-black/90 backdrop-blur-sm rounded-xl p-6 md:p-8 h-full border border-gray-900/50">
+                <div className="relative bg-black/90 backdrop-blur-sm rounded-xl p-5 md:p-6 lg:p-8 h-full border border-gray-900/50">
                   {/* Icon at top center */}
-                  <div className="flex justify-center mb-4 md:mb-6">
+                  <div className="flex justify-center mb-4 md:mb-5 lg:mb-6">
                     <div className="relative">
                       <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500" />
-                      <div className="relative w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-gray-900 to-black rounded-lg flex items-center justify-center border border-yellow-500/30 group-hover:border-yellow-500/60 group-hover:scale-110 transition-all duration-300">
+                      <div className="relative w-12 h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 bg-gradient-to-br from-gray-900 to-black rounded-lg flex items-center justify-center border border-yellow-500/30 group-hover:border-yellow-500/60 group-hover:scale-110 transition-all duration-300">
                         <div className="text-yellow-500">
                           {topic.icon}
                         </div>
@@ -137,7 +134,7 @@ const MasterclassSection = () => {
                   </div>
 
                   {/* Title centered */}
-                  <h3 className="text-lg md:text-xl font-bold text-white text-center mb-2 md:mb-3 group-hover:text-yellow-400 transition-colors duration-300">
+                  <h3 className="text-base md:text-lg lg:text-xl font-bold text-white text-center mb-2 md:mb-3 group-hover:text-yellow-400 transition-colors duration-300">
                     {topic.title}
                   </h3>
                   
@@ -155,16 +152,15 @@ const MasterclassSection = () => {
         </div>
 
         {/* Button */}
-        <div className="text-center">
-          <button className="relative group">
+        <div className="text-center px-4">
+          <button className="relative group w-full sm:w-auto">
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full blur-xl opacity-60 group-hover:opacity-80 transition-opacity" />
             
-            <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold text-sm md:text-base px-8 md:px-10 py-3 md:py-4 rounded-full transition-all group-hover:scale-105">
-              
+            <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold text-sm md:text-base px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-full transition-all group-hover:scale-105">
               <span className="relative flex items-center justify-center gap-2">
                 GARANTIR A MINHA VAGA AGORA
                 <svg 
-                  className="w-4 h-4 group-hover:translate-x-1 transition-transform" 
+                  className="w-4 h-4 group-hover:translate-x-1 transition-transform flex-shrink-0" 
                   fill="none" 
                   viewBox="0 0 24 24" 
                   stroke="currentColor"
@@ -175,8 +171,6 @@ const MasterclassSection = () => {
               </span>
             </div>
           </button>
-
-         
         </div>
       </div>
     </section>
