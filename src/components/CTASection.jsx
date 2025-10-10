@@ -3,12 +3,12 @@ import { Check, Calendar, Clock, Video } from 'lucide-react';
 
 const CTASection = () => {
   const benefits = [
-    "Descobrir estratégias testadas que podes aplicar de imediato",
-    "Ter acesso a insights que não encontras em nenhum curso online",
-    "Aprender a evitar erros e crenças comuns que estão a travar o teu crescimento",
-    "Sair com um plano prático de ação, pronto a executar",
-    "Sentir-te com mais clareza, foco e motivação para avançar",
-    "Conectar-te com pessoas que partilham os mesmos desafios e ambições que tu"
+    "Método passo a passo para começar no Airbnb e Booking do zero",
+    "Estratégias para criar rendimento passivo todos os dias",
+    "Técnicas de otimização que já geraram múltiplos 5 dígitos",
+    "Comunidade exclusiva com hosts de sucesso em Portugal",
+    "Ferramentas e automações para ter um negócio que funciona sozinho",
+    "Garantia: Aplica o método ou devolve-se o investimento"
   ];
 
   return (
