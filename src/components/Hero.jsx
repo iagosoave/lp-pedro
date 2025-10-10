@@ -103,7 +103,7 @@ const HeroSection = () => {
               <div className="border-2 border-yellow-500 rounded-full px-4 py-2 flex items-center gap-2">
                 <Calendar className="w-3.5 h-3.5 text-yellow-500 flex-shrink-0" />
                 <p className="text-white text-xs font-bold tracking-wide whitespace-nowrap">
-                  17/10 | 19H30 | ZOOM
+                  17/10 | 19H30 (Horário de Portugal) | ZOOM
                 </p>
               </div>
             </motion.div>
@@ -210,7 +210,7 @@ const HeroSection = () => {
             <div className="inline-flex items-center gap-2.5 border-2 border-yellow-500 rounded-full px-5 py-2.5">
               <Calendar className="w-4 h-4 text-yellow-500" />
               <p className="text-white text-sm font-bold tracking-wide">
-                17/10 | 19H30 | ZOOM
+                17/10 | 19H30 (Horário de Portugal) | ZOOM
               </p>
             </div>
           </motion.div>
