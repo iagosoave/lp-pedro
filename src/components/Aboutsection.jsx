@@ -1,150 +1,392 @@
-import { motion } from 'framer-motion';
-import { KeyRound, Hotel, Sparkles } from 'lucide-react';
-import pedroImage from './pedro.jpg';
+import { useState } from 'react';
+import { KeyRound, Hotel, Sparkles, TrendingUp, Star, DollarSign } from 'lucide-react';
+import pedroImage from './pedro.png';
+import tiagoImage from './tiago.png';
 
 const GOLD_COLOR = '#DAA520';
 
-const highlights = [
+const tiagoHighlights = [
+  {
+    icon: <Sparkles size={24} />,
+    title: "Criador de Experiências",
+    description: "Desenvolve quartos temáticos e serviços complementares que transformam uma simples estadia em algo marcante e memorável."
+  },
+  {
+    icon: <Star size={24} />,
+    title: "Valor Além do Esperado",
+    description: "Através da decoração diferenciada e atenção ao detalhe, cria experiências que fazem os hóspedes querer voltar sempre."
+  },
+  {
+    icon: <TrendingUp size={24} />,
+    title: "Visão Diferenciada",
+    description: "Acredita que o mercado imobiliário nunca estará saturado - basta uma ideia diferenciada do normal para se destacar."
+  }
+];
+
+const pedroHighlights = [
   {
     icon: <KeyRound size={24} />,
-    title: "Estratégias Exclusivas",
-    description: "Métodos que abrem as portas para o sucesso em alojamento.",
+    title: "10+ Anos de Mentoria",
+    description: "Acompanha desde iniciantes até figuras reconhecidas da televisão, tornando o investimento acessível para todos."
+  },
+  {
+    icon: <DollarSign size={24} />,
+    title: "Estratégia & Rentabilidade",
+    description: "Especializa-se em análise de rentabilidade para maximizar o retorno sobre o investimento imobiliário."
   },
   {
     icon: <Hotel size={24} />,
-    title: "Mestre da Hospitalidade",
-    description: "Eleve a experiência dos seus hóspedes e as suas avaliações.",
-  },
-  {
-    icon: <Sparkles size={24} />,
-    title: "Resultados Brilhantes",
-    description: "Transforme a sua propriedade numa fonte de rendimento de topo.",
-  },
+    title: "Liberdade Financeira",
+    description: "Demonstra como transformar o imobiliário numa fonte consistente de riqueza, mesmo sem grandes capitais iniciais."
+  }
 ];
 
-const sectionVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const imageVariants = {
-  hidden: { opacity: 0, x: -50 },
-  visible: { 
-    opacity: 1, 
-    x: 0, 
-    transition: { duration: 0.8, ease: 'easeOut' } 
-  },
-};
-
-const textVariants = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { 
-    opacity: 1, 
-    x: 0, 
-    transition: { duration: 0.8, ease: 'easeOut' } 
-  },
-};
-
 const Aboutsection = () => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+
   return (
     <section 
       id="sobre" 
-      className="relative flex min-h-screen w-full items-center justify-center bg-black py-12 md:py-20 text-white overflow-x-hidden"
+      className="relative w-full bg-black py-16 md:py-24 text-white"
     >
-      <div 
-        className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-yellow-800/30 to-transparent"
-      />
-
-      <motion.div 
-        className="container mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 md:gap-12 px-4 sm:px-6 md:px-8 md:grid-cols-2"
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        {/* Coluna da Esquerda: Imagem */}
-        <motion.div variants={imageVariants} className="relative w-full max-w-sm mx-auto md:max-w-none">
-          <div 
-            className="absolute -inset-1 rounded-lg opacity-20 blur-2xl"
-            style={{ background: `radial-gradient(circle at center, ${GOLD_COLOR}, transparent 70%)` }}
-          />
-          
-          <div className="relative aspect-[4/5] overflow-hidden rounded-lg border border-neutral-900">
-            <img
-              src={pedroImage}
-              alt="Pedro Gomes, especialista em Airbnb e Booking"
-              className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-            />
-            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent pointer-events-none" />
-          </div>
-        </motion.div>
-
-        {/* Coluna da Direita: Conteúdo */}
-        <motion.div variants={textVariants} className="flex flex-col text-left px-2 md:px-0">
-          <div 
-            className="w-12 h-1 rounded-full mb-4 md:mb-6"
-            style={{ background: GOLD_COLOR }}
-          />
-
+      {/* Header */}
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 md:px-8 mb-16">
+        <div className="text-center">
           <h2 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             style={{ color: GOLD_COLOR }}
           >
-            Quem é Pedro Gomes?
+            Quem te vai guiar
           </h2>
-
-          <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-3 md:mb-4">
-            Pedro Gomes é um especialista em otimização de alojamento local, reconhecido por ajudar anfitriões a transformar as suas propriedades em fontes de rendimento de sucesso. Com um método comprovado, ele desmistifica os segredos das plataformas digitais.
+          <p className="text-xl md:text-2xl text-gray-400">
+            +15 alojamentos geridos | Estratégias comprovadas
           </p>
-          <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-8 md:mb-12">
-            A sua jornada é a prova de que, com a estratégia certa, qualquer um pode prosperar. Se ele conseguiu, você também consegue.
-          </p>
+        </div>
+      </div>
 
-          {/* Destaques */}
-          <div className="space-y-4 md:space-y-6">
-            {highlights.map((item, index) => (
-              <motion.div 
-                key={item.title}
-                className="flex items-start gap-3 md:gap-4 group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div 
-                  className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-lg bg-neutral-900 flex items-center justify-center border border-neutral-800 group-hover:border-yellow-900/50 transition-colors duration-300"
-                >
-                  <div style={{ color: GOLD_COLOR }}>
-                    {item.icon}
-                  </div>
-                </div>
-                
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-lg md:text-xl font-semibold text-white mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-gray-400">
-                    {item.description}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-8 md:mt-12 flex items-center gap-4">
-            <div className="h-px flex-1 bg-gradient-to-r from-yellow-800/30 to-transparent" />
-            <div 
-              className="w-2 h-2 rounded-full"
-              style={{ background: GOLD_COLOR }}
+      {/* Pedro Gomes */}
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 md:px-8 mb-20">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          {/* Imagem */}
+          <div className="w-full md:w-2/5">
+            <img
+              src={pedroImage}
+              alt="Pedro Gomes"
+              className="w-full h-auto rounded-lg"
             />
           </div>
-        </motion.div>
-      </motion.div>
+
+          {/* Conteúdo */}
+          <div className="w-full md:w-3/5">
+            <h3 
+              className="text-3xl md:text-4xl font-bold mb-2"
+              style={{ color: GOLD_COLOR }}
+            >
+              Pedro Gomes
+            </h3>
+            <p className="text-lg font-semibold mb-4" style={{ color: GOLD_COLOR }}>
+              Investimento & Imobiliário
+            </p>
+            <div className="text-gray-300 text-sm leading-relaxed space-y-3">
+              <p>
+                Pedro Gomes é empreendedor e investidor com foco no mercado imobiliário internacional. A sua abordagem combina visão prática e estratégia financeira, procurando sempre oportunidades de rentabilidade em imóveis com potencial de valorização e rendimento passivo.
+              </p>
+              <p className="font-medium text-gray-200">
+                Especializa-se em: aquisição e gestão de imóveis destinados a arrendamento e turismo; análise de rentabilidade para maximizar o retorno sobre o investimento; gestão de parcerias e redes de contacto no setor imobiliário.
+              </p>
+              <p>
+                Pedro acredita que o imobiliário é uma das formas mais seguras de construir liberdade financeira e dedica-se a partilhar estratégias que demonstram como investir de forma inteligente, mesmo sem grandes capitais iniciais.
+              </p>
+              <p>
+                Com experiência prática em projetos próprios, alia conhecimento de mercado a uma comunicação clara, ajudando outros a perceberem como transformar o imobiliário numa fonte consistente de riqueza e estabilidade.
+              </p>
+              <p className="font-medium text-gray-200">
+                Pedro Gomes dedica-se a mentorias há mais de 10 anos, acompanhando desde quem está a dar os primeiros passos no investimento até figuras reconhecidas do mundo da televisão. A sua missão é simples: tornar o caminho mais claro e acessível para todos, independentemente do ponto de partida.
+              </p>
+              <p className="italic text-gray-400">
+                Pedro conseguiu pagar o seu casamento na Tailândia apenas com os rendimentos do Airbnb.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Cards do Pedro */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 mt-12">
+          {pedroHighlights.map((topic, index) => (
+            <div
+              key={index}
+              onMouseEnter={() => setHoveredCard(`pedro-${index}`)}
+              onMouseLeave={() => setHoveredCard(null)}
+              className="relative group h-full"
+            >
+              <div className="relative h-full">
+                <svg
+                  className="absolute inset-0 w-full h-full pointer-events-none"
+                  style={{ width: 'calc(100% + 4px)', height: 'calc(100% + 4px)', left: '-2px', top: '-2px' }}
+                >
+                  <defs>
+                    <linearGradient id={`grad-pedro-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#DAA520" />
+                      <stop offset="50%" stopColor="#B8860B" />
+                      <stop offset="100%" stopColor="#FFD700" />
+                    </linearGradient>
+                  </defs>
+                  
+                  <rect
+                    x="2"
+                    y="2"
+                    width="calc(100% - 4px)"
+                    height="calc(100% - 4px)"
+                    rx="12"
+                    ry="12"
+                    fill="none"
+                    stroke={`url(#grad-pedro-${index})`}
+                    strokeWidth="2"
+                    strokeDasharray="100 1900"
+                    className={hoveredCard === `pedro-${index}` ? "opacity-100" : "opacity-30"}
+                  >
+                    <animateTransform
+                      attributeName="transform"
+                      type="rotate"
+                      from="0 50% 50%"
+                      to="360 50% 50%"
+                      dur="4s"
+                      repeatCount="indefinite"
+                    />
+                  </rect>
+
+                  {hoveredCard === `pedro-${index}` && (
+                    <rect
+                      x="2"
+                      y="2"
+                      width="calc(100% - 4px)"
+                      height="calc(100% - 4px)"
+                      rx="12"
+                      ry="12"
+                      fill="none"
+                      stroke={`url(#grad-pedro-${index})`}
+                      strokeWidth="2"
+                      strokeDasharray="80 1920"
+                      className="opacity-60"
+                    >
+                      <animateTransform
+                        attributeName="transform"
+                        type="rotate"
+                        from="360 50% 50%"
+                        to="0 50% 50%"
+                        dur="3s"
+                        repeatCount="indefinite"
+                      />
+                    </rect>
+                  )}
+                </svg>
+
+                <div className="relative bg-black/90 backdrop-blur-sm rounded-xl p-5 md:p-6 lg:p-8 h-full border border-gray-900/50">
+                  <div className="flex justify-center mb-4 md:mb-5 lg:mb-6">
+                    <div className="relative">
+                      <div 
+                        className="absolute inset-0 blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"
+                        style={{ background: `radial-gradient(circle, ${GOLD_COLOR}, transparent)` }}
+                      />
+                      <div 
+                        className="relative w-12 h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 bg-gradient-to-br from-gray-900 to-black rounded-lg flex items-center justify-center border group-hover:scale-110 transition-all duration-300"
+                        style={{ borderColor: `${GOLD_COLOR}30` }}
+                        onMouseEnter={(e) => e.currentTarget.style.borderColor = `${GOLD_COLOR}60`}
+                        onMouseLeave={(e) => e.currentTarget.style.borderColor = `${GOLD_COLOR}30`}
+                      >
+                        <div style={{ color: GOLD_COLOR }}>
+                          {topic.icon}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 
+                    className="text-base md:text-lg lg:text-xl font-bold text-white text-center mb-2 md:mb-3 transition-colors duration-300"
+                    style={hoveredCard === `pedro-${index}` ? { color: GOLD_COLOR } : {}}
+                  >
+                    {topic.title}
+                  </h3>
+                  
+                  <p className="text-gray-400 text-center text-xs md:text-sm leading-relaxed">
+                    {topic.description}
+                  </p>
+
+                  <div 
+                    className="absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{ background: `linear-gradient(to right, transparent, ${GOLD_COLOR}, transparent)` }}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Tiago Gomes */}
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 md:px-8 mb-16">
+        <div className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
+          {/* Imagem */}
+          <div className="w-full md:w-2/5">
+            <img
+              src={tiagoImage}
+              alt="Tiago Gomes"
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+
+          {/* Conteúdo */}
+          <div className="w-full md:w-3/5">
+            <h3 
+              className="text-3xl md:text-4xl font-bold mb-2"
+              style={{ color: GOLD_COLOR }}
+            >
+              Tiago Gomes
+            </h3>
+            <p className="text-lg font-semibold mb-4" style={{ color: GOLD_COLOR }}>
+              Oncle Rich - Criador de Conteúdo & Investidor
+            </p>
+            <div className="text-gray-300 text-sm leading-relaxed space-y-3">
+              <p>
+                Tiago Gomes, conhecido como Oncle Rich, é empreendedor e criador de conteúdo focado em investimentos imobiliários e desenvolvimento pessoal. Através de uma comunicação inspiradora e prática, partilha conhecimentos que ajudam pessoas a: tomar decisões mais conscientes sobre investir em imóveis; construir liberdade financeira com base em estratégias reais e acessíveis; aplicar princípios de mentalidade e crescimento pessoal ao mundo dos negócios.
+              </p>
+              <p>
+                O projeto Oncle Rich posiciona-se como uma voz próxima e provocadora, desmistificando crenças erradas sobre riqueza e mostrando, com exemplos práticos, que investir é possível para qualquer pessoa preparada.
+              </p>
+              <p>
+                Combinando experiência empresarial e visão estratégica, Tiago aposta em conteúdo digital e em formatos educativos (posts, histórias, workshops) que inspiram e, ao mesmo tempo, dão ferramentas concretas para criar resultados.
+              </p>
+              <p className="font-medium text-gray-200">
+                Tiago Gomes distingue-se no mercado imobiliário pela sua visão criativa e fora do comum. Para ele, investir não é apenas comprar e arrendar — é criar experiências memoráveis que fazem os hóspedes querer voltar.
+              </p>
+              <p>
+                Gosta de desenvolver quartos temáticos e de oferecer serviços complementares que transformam uma simples estadia em algo marcante. Seja através da decoração diferenciada, da atenção ao detalhe ou de pequenas surpresas pensadas para o hóspede, Tiago acredita que o segredo do sucesso está em proporcionar valor além do esperado.
+              </p>
+              <p className="font-medium text-gray-200">
+                O seu lema é simples: <span className="italic">clientes satisfeitos voltam sempre</span>. Esta abordagem não só aumenta a rentabilidade, como cria um círculo de confiança e fidelidade que o distingue no setor.
+              </p>
+              <p className="italic text-gray-400">
+                Acredita que o mercado imobiliário nunca estará saturado, apenas basta uma ideia diferenciada do normal para se destacar.
+              </p>
+              <p className="italic text-gray-400">
+                Autor de um livro de educação financeira para crianças: "As Aventuras Financeiras de Lili e Leo"
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Cards do Tiago */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 mt-12">
+          {tiagoHighlights.map((topic, index) => (
+            <div
+              key={index}
+              onMouseEnter={() => setHoveredCard(`tiago-${index}`)}
+              onMouseLeave={() => setHoveredCard(null)}
+              className="relative group h-full"
+            >
+              <div className="relative h-full">
+                <svg
+                  className="absolute inset-0 w-full h-full pointer-events-none"
+                  style={{ width: 'calc(100% + 4px)', height: 'calc(100% + 4px)', left: '-2px', top: '-2px' }}
+                >
+                  <defs>
+                    <linearGradient id={`grad-tiago-${index}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#DAA520" />
+                      <stop offset="50%" stopColor="#B8860B" />
+                      <stop offset="100%" stopColor="#FFD700" />
+                    </linearGradient>
+                  </defs>
+                  
+                  <rect
+                    x="2"
+                    y="2"
+                    width="calc(100% - 4px)"
+                    height="calc(100% - 4px)"
+                    rx="12"
+                    ry="12"
+                    fill="none"
+                    stroke={`url(#grad-tiago-${index})`}
+                    strokeWidth="2"
+                    strokeDasharray="100 1900"
+                    className={hoveredCard === `tiago-${index}` ? "opacity-100" : "opacity-30"}
+                  >
+                    <animateTransform
+                      attributeName="transform"
+                      type="rotate"
+                      from="0 50% 50%"
+                      to="360 50% 50%"
+                      dur="4s"
+                      repeatCount="indefinite"
+                    />
+                  </rect>
+
+                  {hoveredCard === `tiago-${index}` && (
+                    <rect
+                      x="2"
+                      y="2"
+                      width="calc(100% - 4px)"
+                      height="calc(100% - 4px)"
+                      rx="12"
+                      ry="12"
+                      fill="none"
+                      stroke={`url(#grad-tiago-${index})`}
+                      strokeWidth="2"
+                      strokeDasharray="80 1920"
+                      className="opacity-60"
+                    >
+                      <animateTransform
+                        attributeName="transform"
+                        type="rotate"
+                        from="360 50% 50%"
+                        to="0 50% 50%"
+                        dur="3s"
+                        repeatCount="indefinite"
+                      />
+                    </rect>
+                  )}
+                </svg>
+
+                <div className="relative bg-black/90 backdrop-blur-sm rounded-xl p-5 md:p-6 lg:p-8 h-full border border-gray-900/50">
+                  <div className="flex justify-center mb-4 md:mb-5 lg:mb-6">
+                    <div className="relative">
+                      <div 
+                        className="absolute inset-0 blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500"
+                        style={{ background: `radial-gradient(circle, ${GOLD_COLOR}, transparent)` }}
+                      />
+                      <div 
+                        className="relative w-12 h-12 md:w-13 md:h-13 lg:w-14 lg:h-14 bg-gradient-to-br from-gray-900 to-black rounded-lg flex items-center justify-center border group-hover:scale-110 transition-all duration-300"
+                        style={{ borderColor: `${GOLD_COLOR}30` }}
+                        onMouseEnter={(e) => e.currentTarget.style.borderColor = `${GOLD_COLOR}60`}
+                        onMouseLeave={(e) => e.currentTarget.style.borderColor = `${GOLD_COLOR}30`}
+                      >
+                        <div style={{ color: GOLD_COLOR }}>
+                          {topic.icon}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <h3 
+                    className="text-base md:text-lg lg:text-xl font-bold text-white text-center mb-2 md:mb-3 transition-colors duration-300"
+                    style={hoveredCard === `tiago-${index}` ? { color: GOLD_COLOR } : {}}
+                  >
+                    {topic.title}
+                  </h3>
+                  
+                  <p className="text-gray-400 text-center text-xs md:text-sm leading-relaxed">
+                    {topic.description}
+                  </p>
+
+                  <div 
+                    className="absolute bottom-0 left-0 right-0 h-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    style={{ background: `linear-gradient(to right, transparent, ${GOLD_COLOR}, transparent)` }}
+                  />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };
