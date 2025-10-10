@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
-import bannerImage from './banner.jpg';
-import mobileImage from './mobile.jpg';
+import bannerImage from './banner.png';
+import mobileImage from './mobile.png';
 import student1 from './pessoa1.png';
 import student2 from './pessoa2.png';
 import student3 from './pessoa3.png';
@@ -72,16 +72,7 @@ const HeroSection = () => {
         <div className="relative z-10 flex-1 w-full px-4 py-6 flex flex-col justify-start bg-black">
           <div className="w-full max-w-md mx-auto space-y-4">
             {/* Logo */}
-            <motion.div 
-              {...logoFade}
-              className="flex justify-center mb-1"
-            >
-              <img 
-                src={logo} 
-                alt="Logo" 
-                className="h-14 w-auto"
-              />
-            </motion.div>
+          
 
             {/* Badge Data/Hora/Local */}
             <motion.div 
@@ -190,17 +181,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 lg:px-12 relative z-10 w-full">
         <div className="max-w-xl">
           
-          {/* Logo */}
-          <motion.div 
-            {...logoFade}
-            className="mb-3"
-          >
-            <img 
-              src={logo} 
-              alt="Logo" 
-              className="h-20 lg:h-24 w-auto"
-            />
-          </motion.div>
+         
 
           {/* Badge Data/Hora/Local */}
           <motion.div 
