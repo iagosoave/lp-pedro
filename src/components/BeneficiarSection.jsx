@@ -55,7 +55,7 @@ const BeneficiarSection = () => {
             {/* Title */}
             <div className="mb-8 md:mb-10 lg:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-                Esta Masterclass é para{' '}
+                Este Workshop é para{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
                   ti
                 </span>

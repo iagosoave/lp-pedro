@@ -1,14 +1,14 @@
 import React from 'react';
-import { X, Calendar, Clock, Video } from 'lucide-react';
+import { Check, Calendar, Clock, Video } from 'lucide-react';
 
 const CTASection = () => {
   const benefits = [
-    "Método passo a passo para começar no Airbnb e Booking do zero",
-    "Estratégias para criar rendimento passivo todos os dias",
-    "Técnicas de otimização que já geraram múltiplos 5 dígitos",
-    "Comunidade exclusiva com hosts de sucesso em Portugal",
-    "Ferramentas e automações para ter um negócio que funciona sozinho",
-    "Garantia: Aplica o método ou devolve-se o investimento"
+    "Descobrir estratégias testadas que podes aplicar de imediato",
+    "Ter acesso a insights que não encontras em nenhum curso online",
+    "Aprender a evitar erros e crenças comuns que estão a travar o teu crescimento",
+    "Sair com um plano prático de ação, pronto a executar",
+    "Sentir-te com mais clareza, foco e motivação para avançar",
+    "Conectar-te com pessoas que partilham os mesmos desafios e ambições que tu"
   ];
 
   return (
@@ -19,18 +19,18 @@ const CTASection = () => {
           {/* Left side - Text */}
           <div className="order-2 lg:order-1">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 md:mb-8 leading-tight">
-              Essa é a{' '}
+              Neste{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
-                tua oportunidade
+                workshop exclusivo
               </span>
-              {' '}de entrar no alojamento local e ter acesso a:
+              {' '}vais ter acesso a:
             </h2>
 
             <div className="space-y-3 md:space-y-4">
               {benefits.map((benefit, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <div className="flex-shrink-0 mt-1">
-                    <X className="w-5 h-5 text-yellow-500 stroke-[2.5]" />
+                    <Check className="w-5 h-5 text-yellow-500 stroke-[2.5]" />
                   </div>
                   <p className="text-gray-300 text-sm md:text-base leading-relaxed">
                     {benefit}
@@ -49,7 +49,7 @@ const CTASection = () => {
               <div className="inline-block mb-4">
                 <div className="px-4 py-1.5 bg-yellow-500/10 border border-yellow-500/30 rounded-md">
                   <span className="text-yellow-500 font-medium text-xs uppercase tracking-wider">
-                    OFERTA
+                    VAGAS LIMITADAS
                   </span>
                 </div>
               </div>
@@ -79,7 +79,7 @@ const CTASection = () => {
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <Video className="w-4 h-4 text-yellow-500 flex-shrink-0" />
-                    <p><span className="font-semibold">Formato:</span> Masterclass Online no Zoom</p>
+                    <p><span className="font-semibold">Formato:</span> Workshop Online no Zoom</p>
                   </div>
                 </div>
               </div>
@@ -94,7 +94,7 @@ const CTASection = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full blur-lg opacity-50 group-hover:opacity-70 transition-opacity" />
                 
                 <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold text-base md:text-lg px-6 md:px-8 py-3 md:py-4 rounded-full transition-all group-hover:scale-105 flex items-center justify-center gap-2">
-                  QUERO ME INSCREVER
+                  QUERO GARANTIR MINHA VAGA
                   <svg 
                     className="w-5 h-5 group-hover:translate-x-1 transition-transform flex-shrink-0" 
                     fill="none" 

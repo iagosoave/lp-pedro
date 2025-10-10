@@ -1,29 +1,39 @@
 import React, { useState } from 'react';
-import { Home, TrendingUp, Users, Zap } from 'lucide-react';
+import { Zap, TrendingUp, Users, Target, Lightbulb, CheckCircle } from 'lucide-react';
 
 const MasterclassSection = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const learningTopics = [
     {
-      icon: <Home className="w-6 h-6 md:w-7 md:h-7" />,
-      title: "Gestão Remota",
-      description: "Aprende a gerir propriedades à distância com sistemas automatizados"
+      icon: <Zap className="w-6 h-6 md:w-7 md:h-7" />,
+      title: "Estratégias Testadas",
+      description: "Descobrir estratégias testadas que podes aplicar de imediato."
+    },
+    {
+      icon: <Lightbulb className="w-6 h-6 md:w-7 md:h-7" />,
+      title: "Insights Exclusivos",
+      description: "Ter acesso a insights que não encontras em nenhum curso online."
+    },
+    {
+      icon: <CheckCircle className="w-6 h-6 md:w-7 md:h-7" />,
+      title: "Evita Erros Comuns",
+      description: "Aprender a evitar erros e crenças comuns que estão a travar o teu crescimento."
+    },
+    {
+      icon: <Target className="w-6 h-6 md:w-7 md:h-7" />,
+      title: "Plano de Ação",
+      description: "Sair com um plano prático de ação, pronto a executar."
     },
     {
       icon: <TrendingUp className="w-6 h-6 md:w-7 md:h-7" />,
-      title: "Escalar Rápido",
-      description: "Estratégias para multiplicar o teu portefólio em tempo recorde"
+      title: "Clareza e Foco",
+      description: "Sentir-te com mais clareza, foco e motivação para avançar."
     },
     {
       icon: <Users className="w-6 h-6 md:w-7 md:h-7" />,
-      title: "Parcerias Win-Win",
-      description: "Como criar acordos lucrativos com proprietários de imóveis"
-    },
-    {
-      icon: <Zap className="w-6 h-6 md:w-7 md:h-7" />,
-      title: "Automação Total",
-      description: "Sistemas que trabalham 24/7 enquanto dormes"
+      title: "Conexões Valiosas",
+      description: "Conectar-te com pessoas que partilham os mesmos desafios e ambições que tu."
     }
   ];
 
@@ -38,9 +48,9 @@ const MasterclassSection = () => {
         {/* Title */}
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 md:mb-4 leading-tight px-4">
-            Transforma Conhecimento em{' '}
+            O que vais ganhar com este{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
-              Rendimento Passivo
+              workshop?
             </span>
           </h2>
           <p className="text-gray-400 text-sm md:text-base lg:text-lg mt-3 md:mt-4 max-w-3xl mx-auto px-4">
@@ -49,7 +59,7 @@ const MasterclassSection = () => {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-6 mb-8 md:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 mb-8 md:mb-12">
           {learningTopics.map((topic, index) => (
             <div
               key={index}

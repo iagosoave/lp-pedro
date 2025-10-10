@@ -95,9 +95,6 @@ const HeroSection = () => {
         {/* Content Container */}
         <div className="relative z-10 flex-1 w-full px-4 py-6 flex flex-col justify-start bg-black">
           <div className="w-full max-w-md mx-auto space-y-4">
-            {/* Logo */}
-          
-
             {/* Badge Data/Hora/Local */}
             <motion.div 
               {...logoFade}
@@ -116,7 +113,7 @@ const HeroSection = () => {
               {...fadeInUp}
               className="text-2xl font-bold text-white leading-tight text-center pt-2 px-2"
             >
-              Masterclass{' '}
+              Workshop Lobos do{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
                 Airbnb & Booking
               </span>
@@ -127,7 +124,7 @@ const HeroSection = () => {
               {...fadeInLeft}
               className="text-sm text-gray-300 leading-relaxed text-center px-2"
             >
-              Descobre como criar um negócio lucrativo com alojamento local mesmo sem teres imóveis próprios. Estratégias práticas e comprovadas.
+              Descobre como faturar mais de 300€ por mês por alojamento no Airbnb e Booking, sem investir 1€ do teu bolso. Estratégias comprovadas para criar rendimento passivo.
             </motion.p>
 
             {/* Botão CTA */}
@@ -205,9 +202,6 @@ const HeroSection = () => {
     >
       <div className="container mx-auto px-6 lg:px-12 relative z-10 w-full">
         <div className="max-w-xl">
-          
-         
-
           {/* Badge Data/Hora/Local */}
           <motion.div 
             {...logoFade}
@@ -226,9 +220,9 @@ const HeroSection = () => {
             {...fadeInUp}
             className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-4"
           >
-            Masterclass{' '}
+            Workshop{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
-              Airbnb & Booking
+              Lobos do Airbnb & Booking
             </span>
           </motion.h1>
 
@@ -237,7 +231,7 @@ const HeroSection = () => {
             {...fadeInLeft}
             className="text-base lg:text-lg text-gray-200 leading-relaxed mb-6 max-w-xl"
           >
-            Descobre como criar um negócio lucrativo com alojamento local mesmo sem teres imóveis próprios. Estratégias práticas e comprovadas que podes aplicar de imediato.
+            Descobre como faturar mais de 300€ por mês por alojamento no Airbnb e Booking, sem investir 1€ do teu bolso. Estratégias comprovadas para criar rendimento passivo.
           </motion.p>
 
           {/* Botão CTA com Brilho Premium */}
