@@ -10,6 +10,7 @@ import logo from './logo.png';
 
 const HeroSection = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   
   useEffect(() => {
     const checkMobile = () => {
@@ -20,6 +21,29 @@ const HeroSection = () => {
     window.addEventListener('resize', checkMobile);
     
     return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      // Data do evento: 17/10/2025 às 19:30 (horário de Portugal)
+      const eventDate = new Date('2025-10-17T19:30:00+01:00');
+      const now = new Date();
+      const difference = eventDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60)
+        });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
   }, []);
 
   const fadeInUp = {
@@ -109,6 +133,7 @@ const HeroSection = () => {
             {/* Botão CTA */}
             <motion.div {...buttonGlow} className="pt-2 w-full">
               <motion.button
+                onClick={() => window.open('https://pay.qonto.com/payment-links/0199ca18-798c-7973-ba0d-41c234169e81?resource_id=0199ca18-7987-7cc2-86c0-f4ba472930b0', '_blank')}
                 className="relative group w-full"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -218,6 +243,7 @@ const HeroSection = () => {
           {/* Botão CTA com Brilho Premium */}
           <motion.div {...buttonGlow} className="mb-5">
             <motion.button
+              onClick={() => window.open('https://pay.qonto.com/payment-links/0199ca18-798c-7973-ba0d-41c234169e81?resource_id=0199ca18-7987-7cc2-86c0-f4ba472930b0', '_blank')}
               className="relative group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}

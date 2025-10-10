@@ -153,7 +153,10 @@ const MasterclassSection = () => {
 
         {/* Button */}
         <div className="text-center px-4">
-          <button className="relative group w-full sm:w-auto">
+          <button 
+            onClick={() => window.open('https://pay.qonto.com/payment-links/0199ca18-798c-7973-ba0d-41c234169e81?resource_id=0199ca18-7987-7cc2-86c0-f4ba472930b0', '_blank')}
+            className="relative group w-full sm:w-auto"
+          >
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full blur-xl opacity-60 group-hover:opacity-80 transition-opacity" />
             
             <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold text-sm md:text-base px-6 sm:px-8 md:px-10 py-3 md:py-4 rounded-full transition-all group-hover:scale-105">

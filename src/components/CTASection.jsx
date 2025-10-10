@@ -56,20 +56,15 @@ const CTASection = () => {
 
               {/* Price title */}
               <p className="text-white text-xl md:text-2xl mb-4 font-semibold">
-                Por apenas 12x de:
+                Garante a tua vaga por apenas:
               </p>
 
               {/* Price */}
-              <div className="mb-4">
+              <div className="mb-6">
                 <div className="text-6xl sm:text-7xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">
-                  €XXX
+                  €39,90
                 </div>
               </div>
-
-              {/* Subtitle */}
-              <p className="text-gray-400 text-base md:text-lg mb-6 md:mb-8">
-                ou €XXX à vista
-              </p>
 
               {/* Event details box */}
               <div className="bg-black/50 rounded-xl p-4 md:p-5 mb-6 border border-gray-800">
@@ -90,7 +85,12 @@ const CTASection = () => {
               </div>
 
               {/* CTA Button */}
-              <button className="relative group w-full">
+              <a 
+                href="https://pay.qonto.com/payment-links/0199ca18-798c-7973-ba0d-41c234169e81?resource_id=0199ca18-7987-7cc2-86c0-f4ba472930b0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group w-full block"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full blur-lg opacity-50 group-hover:opacity-70 transition-opacity" />
                 
                 <div className="relative bg-gradient-to-r from-yellow-400 to-yellow-600 text-black font-bold text-base md:text-lg px-6 md:px-8 py-3 md:py-4 rounded-full transition-all group-hover:scale-105 flex items-center justify-center gap-2">
@@ -105,7 +105,7 @@ const CTASection = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </div>
-              </button>
+              </a>
             </div>
           </div>
 
