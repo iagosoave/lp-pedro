@@ -8,36 +8,36 @@ const GOLD_COLOR = '#DAA520';
 const tiagoHighlights = [
   {
     icon: <Sparkles size={24} />,
-    title: "Criador de Experiências",
-    description: "Desenvolve quartos temáticos e serviços complementares que transformam uma simples estadia em algo marcante e memorável."
+    title: "Alojamentos Atípicos",
+    description: "Criador de espaços que mostram como é possível transformar um alojamento em algo memorável."
   },
   {
     icon: <Star size={24} />,
-    title: "Valor Além do Esperado",
-    description: "Através da decoração diferenciada e atenção ao detalhe, cria experiências que fazem os hóspedes querer voltar sempre."
+    title: "Destaque no Mercado",
+    description: "Ensina como tornar um alojamento irresistível, criando uma experiência que não se encontra em anúncios \"normais\"."
   },
   {
     icon: <TrendingUp size={24} />,
-    title: "Visão Diferenciada",
-    description: "Acredita que o mercado imobiliário nunca estará saturado - basta uma ideia diferenciada do normal para se destacar."
+    title: "Diferenciação",
+    description: "Mostra que o mercado não está saturado se souberes dar um toque único ao teu alojamento."
   }
 ];
 
 const pedroHighlights = [
   {
     icon: <KeyRound size={24} />,
-    title: "10+ Anos de Mentoria",
-    description: "Acompanha desde iniciantes até figuras reconhecidas da televisão, tornando o investimento acessível para todos."
+    title: "Exemplo de liberdade",
+    description: "Mostra que o alojamento local pode financiar sonhos e dar independência."
   },
   {
     icon: <DollarSign size={24} />,
-    title: "Estratégia & Rentabilidade",
-    description: "Especializa-se em análise de rentabilidade para maximizar o retorno sobre o investimento imobiliário."
+    title: "Prova de faturação",
+    description: "Mais de 50.000 € faturados em apenas 11 meses."
   },
   {
     icon: <Hotel size={24} />,
-    title: "Liberdade Financeira",
-    description: "Demonstra como transformar o imobiliário numa fonte consistente de riqueza, mesmo sem grandes capitais iniciais."
+    title: "História inspiradora",
+    description: "Pagou o próprio casamento na Tailândia apenas com o rendimento gerado pelo Airbnb."
   }
 ];
 
@@ -56,7 +56,7 @@ const Aboutsection = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
             style={{ color: GOLD_COLOR }}
           >
-            Quem te vai guiar
+            Os Mentores
           </h2>
           <p className="text-xl md:text-2xl text-gray-400">
             +15 alojamentos geridos | Estratégias comprovadas
