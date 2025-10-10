@@ -41,9 +41,6 @@ const BeneficiarSection = () => {
           {/* Left side - Image */}
           <div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
             <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-xl px-4 sm:px-0">
-              {/* Glow effect behind image */}
-              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/30 to-yellow-600/30 blur-3xl scale-110" />
-              
               {/* Image */}
               <img 
                 src={airBookImage}
@@ -77,9 +74,6 @@ const BeneficiarSection = () => {
                   <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 rounded-xl transition-all duration-300 border border-gray-900 hover:border-yellow-500/30 hover:bg-yellow-500/5">
                     {/* Icon */}
                     <div className="relative flex-shrink-0">
-                      <div className={`absolute inset-0 bg-yellow-500 rounded-full blur-lg transition-opacity duration-300 ${
-                        hoveredItem === index ? 'opacity-30' : 'opacity-0'
-                      }`} />
                       <div className={`relative w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center transition-all duration-300 ${
                         hoveredItem === index 
                           ? 'bg-gradient-to-br from-yellow-400 to-yellow-600 scale-110' 
